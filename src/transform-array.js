@@ -17,9 +17,35 @@ function transform(arr) {
   if (!Array.isArray(arr)) { 
     throw new Error("'arr' parameter must be an instance of the Array!")
   };
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i]);
+    if (arr[i] === '--discard-prev') {
+      newArr.pop();
+        newArr.pop();
+    }
+    if (arr[i] === '--double-next') {
+      newArr.pop();
+      if (i < arr.length - 1) {
+      newArr.push(arr[i + 1])
+      }
+    }
+    if (arr[i] === '--double-prev') {
+      newArr.pop(); 
+      newArr.push(newArr[i - 1])
+    }
+    if (arr[i] === '--discard-next') {
+      newArr.pop();
+      if (i < arr.length - 1) {
+        i += 2;
+      }
+    }
+  }
+  return newArr.filter(elem => elem !== undefined);
   //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
+
 
 module.exports = {
   transform
