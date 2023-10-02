@@ -15,9 +15,10 @@ const { NotImplementedError } = require('../lib');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-
-function repeater(/* str, options */) {
-  // Remove line below and write your code here
+function repeater(/*str, options*/) {
+  /*if (!("repeatTimes" in options)) {
+    return
+  }*/
   throw new NotImplementedError('Not implemented');
 }
 
