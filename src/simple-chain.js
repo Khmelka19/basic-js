@@ -6,22 +6,30 @@ const { NotImplementedError } = require('../lib');
  *
  */
 const chainMaker = {
+  currentChain: [],
+
   getLength() {
-    // Remove line below and write your code here
+    return this.currentChain.length;
+    //throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  },
+
+  addLink(value) {
+    this.currentChain.push(`${value}`);
+    return this.currentChain; 
+    //throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  },
+
+  removeLink(position) {
     throw new NotImplementedError('Not implemented');
   },
-  addLink(/* value */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
-  },
-  removeLink(/* position */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
-  },
+
   reverseChain() {
     // Remove line below and write your code here
     throw new NotImplementedError('Not implemented');
   },
+
   finishChain() {
     // Remove line below and write your code here
     throw new NotImplementedError('Not implemented');
