@@ -15,25 +15,43 @@ const chainMaker = {
   },
 
   addLink(value) {
-    this.currentChain.push(`${value}`);
-    return this.currentChain; 
+    this.currentChain.push(`( ${value} )`);
+    return this; 
     //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   },
 
   removeLink(position) {
-    throw new NotImplementedError('Not implemented');
+    if (typeof(position) === 'number' && position <= this.currentChain.length && position > 0) {
+      this.currentChain.splice(position - 1, 1);
+    } else {
+		  this.currentChain.length = 0;
+      throw Error('You can\'t remove incorrect link!');
+    }
+    return this;
+  },
+  
+  reverseChain() {
+    this.currentChain.reverse();
+    return this;
+    //throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
   },
 
   reverseChain() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    this.currentChain.reverse();
+    return this;
+    //throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
   },
 
   finishChain() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
-  },
+    let str = this.currentChain.join('~~');
+    this.currentChain.length = 0;
+    return str;
+    //throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  }
 };
 
 module.exports = {
