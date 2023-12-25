@@ -22,7 +22,7 @@ function dateSample(sampleActivity) {
   const HALF_LIFE_PERIOD = 5730;
   let age;
 
-  if ((typeof(sampleActivity) !== 'string') || (sampleActivity.length = 0) || (sampleActivity <= 0) || (sampleActivity > MODERN_ACTIVITY)) {
+  if ((typeof(sampleActivity) !== 'string') || (sampleActivity.length = 0) || (sampleActivity <= 0) || (sampleActivity > MODERN_ACTIVITY) || (isNaN(sampleActivity))) {
     return false;
   } else {
     age = Math.ceil(Math.log(MODERN_ACTIVITY / sampleActivity) / (0.693 / HALF_LIFE_PERIOD));
